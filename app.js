@@ -8,7 +8,7 @@ const socketServer = require("./socketServer");
 const authRoutes = require("./routes/authRoutes");
 const friendInvitationRoutes = require("./routes/friendInvitationRoutes");
 
-const PORT = process.env.PORT || process.env.API_PORT;
+const PORT = 5002;
 
 const app = express();
 app.use(express.json());
@@ -22,7 +22,7 @@ const server = http.createServer(app);
 socketServer.registerSocketServer(server);
 
 mongoose
-  .connect(mongodb+srv://rohit:Rohitchauhan@cluster0.w28qqbt.mongodb.net/?retryWrites=true&w=majority)
+  .connect("mongodb+srv://rohit:Rohitchauhan@cluster0.w28qqbt.mongodb.net/new?retryWrites=true&w=majority")
   .then(() => {
     server.listen(PORT, () => {
       console.log(`Server is listening on ${PORT}`);

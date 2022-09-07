@@ -1,5 +1,5 @@
 const express = require("express");
-const https= require("https");
+const http= require("http");
 const cors = require("cors");
 const mongoose = require("mongoose");
 require("dotenv").config();
@@ -26,7 +26,7 @@ app.get('/',(req,res)=>{
 app.use("/api/auth", authRoutes);
 app.use("/api/friend-invitation", friendInvitationRoutes);
 
-const server = https.createServer(app);
+const server = http.createServer(app);
 socketServer.registerSocketServer(server);
 
 mongoose

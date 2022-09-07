@@ -22,7 +22,7 @@ const server = http.createServer(app);
 socketServer.registerSocketServer(server);
 
 mongoose
-  .connect(process.env.MONGO_URI)
+  .connect(mongodb+srv://rohit:Rohitchauhan@cluster0.w28qqbt.mongodb.net/?retryWrites=true&w=majority)
   .then(() => {
     server.listen(PORT, () => {
       console.log(`Server is listening on ${PORT}`);

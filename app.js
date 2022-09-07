@@ -8,17 +8,25 @@ const socketServer = require("./socketServer");
 const authRoutes = require("./routes/authRoutes");
 const friendInvitationRoutes = require("./routes/friendInvitationRoutes");
 
-const PORT = 5002;
+const PORT = 5000;
 
 const app = express();
 app.use(express.json());
 app.use(cors());
 
+app.get('/',(req,res)=>{
+
+  res.send("Hello Chal gya bhai")
+
+  res.end()
+
+})
+
 // register the routes
 app.use("/api/auth", authRoutes);
 app.use("/api/friend-invitation", friendInvitationRoutes);
 
-const server = http.createServer(app);
+const server = https.createServer(app);
 socketServer.registerSocketServer(server);
 
 mongoose

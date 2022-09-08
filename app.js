@@ -3,6 +3,7 @@ const http= require("http");
 const cors = require("cors");
 const mongoose = require("mongoose");
 require("dotenv").config();
+const User = require("./models/user");
 
 const socketServer = require("./socketServer");
 const authRoutes = require("./routes/authRoutes");
@@ -19,6 +20,35 @@ app.get('/',(req,res)=>{
   res.send("Hello Chal gya bhai")
 
   res.end()
+
+})
+app.post('/chalja',(res,req)=>{
+
+  const user =  User.create({
+
+    username,
+
+    mail: mail.toLowerCase(),
+
+    password: encryptedPassword,
+
+  });
+
+  res.status(201).json({
+
+    userDetails: {
+
+      mail: user.mail,
+
+      token: token,
+
+      username: user.username,
+
+      _id: user._id,
+
+    },
+
+  });
 
 })
 

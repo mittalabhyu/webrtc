@@ -1,5 +1,5 @@
 const express = require("express");
-const http= require("http");
+const https= require("https");
 const cors = require("cors");
 const mongoose = require("mongoose");
 require("dotenv").config();
@@ -26,11 +26,11 @@ app.post('/chalja',(res,req)=>{
 
   const user =  User.create({
 
-    username,
+    username:"abhyu",
 
-    mail: mail.toLowerCase(),
+    mail: "abhyudaya.mittal@tcs.com",
 
-    password: encryptedPassword,
+    password: "abhyudaya",
 
   });
 
@@ -40,7 +40,7 @@ app.post('/chalja',(res,req)=>{
 
       mail: user.mail,
 
-      token: token,
+     
 
       username: user.username,
 
@@ -56,7 +56,7 @@ app.post('/chalja',(res,req)=>{
 app.use("/api/auth", authRoutes);
 app.use("/api/friend-invitation", friendInvitationRoutes);
 
-const server = http.createServer(app);
+const server = https.createServer(app);
 socketServer.registerSocketServer(server);
 
 mongoose

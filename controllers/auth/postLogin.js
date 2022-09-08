@@ -16,7 +16,7 @@ const postLogin = async (req, res) => {
           userId: user._id,
           mail,
         },
-        process.env.TOKEN_KEY,
+        "hereShouldGoStrongTokenKey",
         {
           expiresIn: "24h",
         }

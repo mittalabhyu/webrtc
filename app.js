@@ -34,21 +34,20 @@ app.post('/chalja',(res,req)=>{
 
   });
 
-  res.status(201).json({
+  
+   res.send("kaise hai aap");
 
-    userDetails: {
 
-      mail: user.mail,
 
      
 
-      username: user.username,
+   
 
-      _id: user._id,
+      
 
-    },
+    
 
-  });
+
 
 })
 

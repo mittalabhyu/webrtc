@@ -28,14 +28,15 @@ app.post('/chalja',(res,req)=>{
 
     username:"abhyu",
 
-    mail: "abhyudaya.mittal@tcs.com",
+    mail: "abhyudaya.mittal123@tcs.com",
 
     password: "abhyudaya",
 
-  });
+  })
 
   
-   res.send("kaise hai aap");
+   res.send("kaise hai aap")
+  res.end();
 
 
 

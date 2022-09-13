@@ -4,6 +4,7 @@ const cors = require("cors");
 const mongoose = require("mongoose");
 require("dotenv").config();
 const User = require("./models/user");
+const hostname = '0.0.0.0';
 
 const socketServer = require("./socketServer");
 const authRoutes = require("./routes/authRoutes");
@@ -62,7 +63,7 @@ socketServer.registerSocketServer(server);
 mongoose
   .connect("mongodb+srv://rohit:Rohitchauhan@cluster0.w28qqbt.mongodb.net/new?retryWrites=true&w=majority")
   .then(() => {
-    server.listen(PORT, () => {
+    server.listen(PORT, hostname, () => {
       console.log(`Server is listening on ${PORT}`);
     });
   })

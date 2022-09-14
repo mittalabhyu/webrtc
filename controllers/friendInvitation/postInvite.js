@@ -4,6 +4,8 @@ const friendsUpdates = require("../../socketHandlers/updates/friends");
 
 const postInvite = async (req, res) => {
   const { targetMailAddress } = req.body;
+  console.log("yaha aagya",targetMailAddress);
+  console.log("ruk jao", req,res);
 
   const { userId, mail } = req.user;
 

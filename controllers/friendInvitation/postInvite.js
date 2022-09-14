@@ -7,7 +7,9 @@ const postInvite = async (req, res) => {
   console.log("yaha aagya",req.body);
   console.log("ruk jao", req.user);
 
-  const { userId, mail } = req.user;
+  //const { userId, mail } = req.user;
+  const userId= "6321848b7cd3d68e85cacb90";
+  const mail = "admin@gmail.com";
 
   // check if friend that we would like to invite is not user
 
